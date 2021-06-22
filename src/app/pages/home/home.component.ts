@@ -8,8 +8,16 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class HomeComponent implements OnInit {
   constructor(public authService : AuthService){}
-
+  userEmail : String;
+  userPassword : String;
+  error = "wrong user";
   ngOnInit(): void {
   }
+login(){
 
+  this.authService.login()
+}
+  logout(){
+    this.authService.logout();
+  }
 }
